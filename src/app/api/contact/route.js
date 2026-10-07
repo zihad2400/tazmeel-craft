@@ -4,6 +4,10 @@ import Contact from "@/models/Contact";
 import { sendContactNotification, sendAutoReply } from "@/lib/mailer";
 import { isAdmin } from "@/lib/auth";
 
+// ⚠️ Vercel Serverless-এ Node.js runtime দরকার (nodemailer-এর জন্য)
+export const runtime = "nodejs";
+export const maxDuration = 30;
+
 // ⭐ Simple in-memory rate limiting (per IP)
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
@@ -83,47 +87,78 @@ export async function POST(req) {
       status: "NEW",
     });
 
-    console.log("✅ Contact saved to DB:", contact._id);
+    console.log("✅ Contact saved to DB:", contact._id.toString());
 
-    // Send emails (non-blocking)
-    Promise.allSettled([
-      sendContactNotification({
-        name,
-        email,
-        phone,
-        company,
-        subject,
-        message,
-      }),
-      sendAutoReply(email, name),
-    ])
-      .then((results) => {
-        results.forEach((result, i) => {
-          if (result.status === "rejected") {
-            console.error(`Email ${i} failed:`, result.reason);
-          } else {
-            console.log(`✅ Email ${i} sent`);
-          }
-        });
-      })
-      .catch((e) => console.error("Email error:", e));
+    // ═══════════════════════════════════════════════════
+    // ⚠️ IMPORTANT: Vercel Serverless-এ await করতে হবে
+    // non-blocking Promise.allSettled() কাজ করবে না
+    // ═══════════════════════════════════════════════════
+    let emailSent = false;
+    let emailError = null;
+
+    try {
+      console.log("📧 Sending notification email...");
+      console.log("   EMAIL_USER:", process.env.EMAIL_USER ? "✅" : "❌");
+      console.log("   EMAIL_PASS:", process.env.EMAIL_PASS ? "✅" : "❌");
+      console.log("   EMAIL_HOST:", process.env.EMAIL_HOST || "❌");
+      console.log("   EMAIL_PORT:", process.env.EMAIL_PORT || "❌");
+
+      const results = await Promise.allSettled([
+        sendContactNotification({
+          name,
+          email,
+          phone,
+          company,
+          subject,
+          message,
+        }),
+        sendAutoReply(email, name),
+      ]);
+
+      results.forEach((result, i) => {
+        if (result.status === "rejected") {
+          console.error(`❌ Email ${i} failed:`, result.reason?.message || result.reason);
+          emailError = result.reason?.message || String(result.reason);
+        } else {
+          console.log(`✅ Email ${i} sent successfully`);
+          emailSent = true;
+        }
+      });
+    } catch (err) {
+      emailError = err.message;
+      console.error("❌ Email sending exception:", err);
+    }
+
+    // ─── Update DB with email status ───
+    try {
+      await Contact.findByIdAndUpdate(contact._id, {
+        emailSent,
+        emailError,
+      });
+    } catch (dbErr) {
+      console.error("⚠️ Could not update email status:", dbErr.message);
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: "Message sent successfully!",
+        message: emailSent
+          ? "Message sent successfully!"
+          : "Message saved. Email pending.",
         data: {
           id: contact._id,
           name: contact.name,
           email: contact.email,
+          emailSent,
+          warning: emailError,
         },
       },
       { status: 201 }
     );
   } catch (err) {
-    console.error("POST /api/contact error:", err);
+    console.error("❌ POST /api/contact error:", err);
     return NextResponse.json(
-      { success: false, error: "Server error. Please try again." },
+      { success: false, error: err.message || "Server error. Please try again." },
       { status: 500 }
     );
   }

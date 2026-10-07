@@ -1,5 +1,7 @@
 "use client";
+
 import Link from "next/link";
+
 import {
   MapPin,
   Phone,
@@ -19,6 +21,7 @@ import {
   ExternalLink,
   Sparkles,
 } from "lucide-react";
+
 import {
   SITE_CONFIG,
   getMapLink,
@@ -62,14 +65,6 @@ const services = [
   },
 ];
 
-// ⭐ Legal Links
-const legalLinks = [
-  { href: "#contact", label: "Privacy Policy" },
-  { href: "#contact", label: "Terms & Conditions" },
-  { href: "#contact", label: "Shipping Info" },
-  { href: "#contact", label: "Return Policy" },
-];
-
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -79,7 +74,6 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-brand-darker text-brand-cream/80 overflow-hidden">
-
       {/* ═══════ Decorative Background ═══════ */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] border-2 border-brand-gold rotate-45" />
@@ -93,7 +87,6 @@ export default function Footer() {
       {/* ═══════ Section 1: Main Footer Content ═══════ */}
       <div className="relative container-custom py-12 sm:py-14 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
-
           {/* ─── Column 1: Brand (5 cols) ─── */}
           <div className="sm:col-span-2 lg:col-span-5">
             <Link
@@ -109,12 +102,15 @@ export default function Footer() {
                     e.target.style.display = "none";
                   }}
                 />
+
                 <div className="absolute inset-0 bg-brand-gold/20 rounded-full blur-xl -z-10 group-hover:bg-brand-gold/30 transition-all" />
               </div>
+
               <div className="min-w-0">
                 <p className="font-serif text-2xl sm:text-3xl text-brand-gold tracking-wide leading-none mb-1">
                   TAZMEEL
                 </p>
+
                 <p className="text-[10px] sm:text-xs tracking-[0.4em] text-brand-gold/70">
                   APPARELS
                 </p>
@@ -138,10 +134,12 @@ export default function Footer() {
                 <Award size={12} className="shrink-0" />
                 Premium Quality
               </span>
+
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-[10px] sm:text-xs text-brand-gold font-medium">
                 <Building2 size={12} className="shrink-0" />
                 Since 2020
               </span>
+
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-[10px] sm:text-xs text-brand-gold font-medium">
                 <Shield size={12} className="shrink-0" />
                 Trusted Manufacturer
@@ -155,9 +153,11 @@ export default function Footer() {
               <span className="w-1 h-5 bg-brand-gold rounded shrink-0" />
               Quick Links
             </h4>
+
             <ul className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-2.5 text-sm">
               {quickLinks.map((l) => {
                 const Icon = l.icon;
+
                 return (
                   <li key={l.href}>
                     <Link
@@ -168,6 +168,7 @@ export default function Footer() {
                         size={12}
                         className="text-brand-gold/50 group-hover:text-brand-gold transition shrink-0"
                       />
+
                       <span className="truncate">{l.label}</span>
                     </Link>
                   </li>
@@ -182,9 +183,11 @@ export default function Footer() {
               <span className="w-1 h-5 bg-brand-gold rounded shrink-0" />
               Our Services
             </h4>
+
             <ul className="space-y-3">
               {services.map((s) => {
                 const Icon = s.icon;
+
                 return (
                   <li
                     key={s.label}
@@ -193,10 +196,12 @@ export default function Footer() {
                     <div className="shrink-0 w-9 h-9 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center group-hover:bg-brand-gold/20 group-hover:scale-110 transition-all">
                       <Icon size={16} className="text-brand-gold" />
                     </div>
+
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium text-brand-cream group-hover:text-brand-gold transition">
                         {s.label}
                       </p>
+
                       <p className="text-[11px] text-brand-cream/50 group-hover:text-brand-cream/70 transition">
                         {s.desc}
                       </p>
@@ -219,10 +224,12 @@ export default function Footer() {
               <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold/20 group-hover:scale-110 transition-all">
                 <Phone size={16} className="text-brand-gold" />
               </div>
+
               <div className="min-w-0">
                 <p className="text-[10px] text-brand-gold/70 tracking-widest">
                   CALL US
                 </p>
+
                 <p className="text-xs sm:text-sm font-medium text-brand-cream group-hover:text-brand-gold transition truncate">
                   {SITE_CONFIG.phonePrimary.display}
                 </p>
@@ -237,10 +244,12 @@ export default function Footer() {
               <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold/20 group-hover:scale-110 transition-all">
                 <Mail size={16} className="text-brand-gold" />
               </div>
+
               <div className="min-w-0">
                 <p className="text-[10px] text-brand-gold/70 tracking-widest">
                   EMAIL US
                 </p>
+
                 <p className="text-xs sm:text-sm font-medium text-brand-cream group-hover:text-brand-gold transition truncate">
                   {SITE_CONFIG.email}
                 </p>
@@ -252,10 +261,12 @@ export default function Footer() {
               <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-gold/10 flex items-center justify-center">
                 <Clock size={16} className="text-brand-gold" />
               </div>
+
               <div className="min-w-0">
                 <p className="text-[10px] text-brand-gold/70 tracking-widest">
                   WORKING HOURS
                 </p>
+
                 <p className="text-xs sm:text-sm font-medium text-brand-cream truncate">
                   {SITE_CONFIG.hours}
                 </p>
@@ -272,10 +283,12 @@ export default function Footer() {
               <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold/20 group-hover:scale-110 transition-all">
                 <MapPin size={16} className="text-brand-gold" />
               </div>
+
               <div className="min-w-0">
                 <p className="text-[10px] text-brand-gold/70 tracking-widest">
                   VISIT US
                 </p>
+
                 <p className="text-xs sm:text-sm font-medium text-brand-cream group-hover:text-brand-gold transition inline-flex items-center gap-1">
                   Get Directions
                   <ExternalLink size={10} className="shrink-0" />
@@ -286,32 +299,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ═══════ Section 3: Legal Links Strip ═══════ */}
-      <div className="relative border-t border-brand-gold/10">
-        <div className="container-custom py-4 sm:py-5">
-          <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm">
-            {legalLinks.map((l, i) => (
-              <span key={l.label} className="flex items-center gap-4 sm:gap-6">
-                <Link
-                  href={l.href}
-                  className="text-brand-cream/50 hover:text-brand-gold transition"
-                >
-                  {l.label}
-                </Link>
-                {i < legalLinks.length - 1 && (
-                  <span className="text-brand-gold/30 hidden sm:inline">•</span>
-                )}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* ═══════ Section 4: Bottom Bar ═══════ */}
       <div className="relative border-t border-brand-gold/10 bg-brand-dark/50">
         <div className="container-custom py-5 sm:py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
-
             {/* Copyright */}
             <p className="text-brand-cream/50 text-center md:text-left">
               © {currentYear}{" "}
@@ -331,22 +322,17 @@ export default function Footer() {
               in Dhaka, Bangladesh
             </p>
 
-            {/* Right side links */}
+            {/* Right side links — Admin permanently removed */}
             <div className="flex items-center gap-4">
-              <Link
-                href="/admin/login"
-                className="text-brand-cream/50 hover:text-brand-gold transition"
-              >
-                Admin
-              </Link>
-              <span className="text-brand-gold/30">•</span>
               <Link
                 href="#contact"
                 className="text-brand-cream/50 hover:text-brand-gold transition"
               >
                 Support
               </Link>
+
               <span className="text-brand-gold/30">•</span>
+
               <button
                 onClick={scrollToTop}
                 className="flex items-center gap-1 text-brand-gold hover:text-brand-goldLight transition group"
