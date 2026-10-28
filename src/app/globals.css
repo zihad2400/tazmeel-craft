@@ -635,3 +635,8 @@ input, textarea, select {
   }
 }
 
+
+/* Roboto font variable for hero title */
+.font-roboto {
+  font-family: var(--font-roboto), Roboto, sans-serif;
+}
