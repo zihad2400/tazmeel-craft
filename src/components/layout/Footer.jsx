@@ -112,7 +112,7 @@ export default function Footer() {
                 </p>
 
                 <p className="text-[10px] sm:text-xs tracking-[0.4em] text-brand-gold/70">
-                  APPARELS
+                  CRAFT
                 </p>
               </div>
             </Link>
@@ -307,7 +307,7 @@ export default function Footer() {
             <p className="text-brand-cream/50 text-center md:text-left">
               © {currentYear}{" "}
               <span className="text-brand-gold font-medium">
-                Tazmeel Apparels
+                Tazmeel Craft
               </span>
               . All rights reserved.
             </p>

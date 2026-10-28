@@ -71,7 +71,7 @@ export async function sendContactNotification(data) {
 <tr>
 <td style="background:#0F3D2E;padding:30px 20px;text-align:center;">
 <h1 style="margin:0;color:#C9A227;font-size:22px;font-weight:bold;letter-spacing:1px;">🎯 NEW CONTACT MESSAGE</h1>
-<p style="margin:8px 0 0;color:#F5F1E8;font-size:13px;">Tazmeel Apparels — Business Inquiry</p>
+<p style="margin:8px 0 0;color:#F5F1E8;font-size:13px;">Tazmeel Craft — Business Inquiry</p>
 </td>
 </tr>
 <tr>
@@ -91,7 +91,7 @@ ${rowsHtml}
 <tr>
 <td style="background:#082A1F;padding:18px;text-align:center;">
 <p style="margin:0;color:#C9A227;font-size:11px;">Received: ${new Date().toLocaleString("en-US")}</p>
-<p style="margin:6px 0 0;color:#C9A227;font-size:10px;opacity:0.7;">Tazmeel Apparels — West Agargaon, Dhaka</p>
+<p style="margin:6px 0 0;color:#C9A227;font-size:10px;opacity:0.7;">Tazmeel Craft — West Agargaon, Dhaka</p>
 </td>
 </tr>
 </table>
@@ -101,7 +101,7 @@ ${rowsHtml}
 </body>
 </html>`;
 
-  const text = `NEW CONTACT MESSAGE — Tazmeel Apparels
+  const text = `NEW CONTACT MESSAGE — Tazmeel Craft
 
 Name: ${name}
 Email: ${email}
@@ -116,7 +116,7 @@ ${message}
 Received: ${new Date().toLocaleString()}`;
 
   return transporter.sendMail({
-    from: `"Tazmeel Apparels" <${process.env.EMAIL_USER}>`,
+    from: `"Tazmeel Craft" <${process.env.EMAIL_USER}>`,
     to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
     replyTo: email,
     subject: `🎯 New Contact: ${subject || "Inquiry"} — ${name}`,
@@ -148,22 +148,22 @@ export async function sendAutoReply(to, name) {
 <tr>
 <td style="padding:35px 30px;color:#0F3D2E;">
 <p style="font-size:16px;line-height:1.7;margin:0 0 20px;">Dear <strong style="color:#C9A227;">${name}</strong>,</p>
-<p style="font-size:15px;line-height:1.7;margin:0 0 20px;">Thank you for contacting <strong>Tazmeel Apparels</strong>. We've received your inquiry and our team will get back to you within <strong style="color:#C9A227;">24 hours</strong>.</p>
+<p style="font-size:15px;line-height:1.7;margin:0 0 20px;">Thank you for contacting <strong>Tazmeel Craft</strong>. We've received your inquiry and our team will get back to you within <strong style="color:#C9A227;">24 hours</strong>.</p>
 <div style="background:#F5F1E8;padding:20px;border-radius:8px;border-left:4px solid #C9A227;margin:25px 0;">
 <p style="margin:0 0 12px;color:#0F3D2E;font-size:13px;font-weight:bold;letter-spacing:1px;">📞 NEED IMMEDIATE HELP?</p>
 <p style="margin:6px 0;font-size:14px;color:#0F3D2E;"><strong>📱 Phone:</strong> <a href="tel:+8801911548979" style="color:#C9A227;text-decoration:none;">01911548979</a></p>
-<p style="margin:6px 0;font-size:14px;color:#0F3D2E;"><strong>✉️ Email:</strong> <a href="mailto:tazmeelapparels@gmail.com" style="color:#C9A227;text-decoration:none;">tazmeelapparels@gmail.com</a></p>
+<p style="margin:6px 0;font-size:14px;color:#0F3D2E;"><strong>✉️ Email:</strong> <a href="mailto:tazmeelcraft@gmail.com" style="color:#C9A227;text-decoration:none;">tazmeelcraft@gmail.com</a></p>
 <p style="margin:6px 0;font-size:14px;color:#0F3D2E;"><strong>🕐 Hours:</strong> 9AM - 9PM (Sat - Fri)</p>
 </div>
 <div style="text-align:center;margin:30px 0 20px;">
 <a href="https://wa.me/8801911548979" style="display:inline-block;background:#25D366;color:#ffffff;padding:14px 32px;border-radius:50px;text-decoration:none;font-weight:bold;font-size:15px;">💬 Chat on WhatsApp</a>
 </div>
-<p style="font-size:14px;line-height:1.7;margin:25px 0 0;text-align:center;">Best regards,<br><strong style="color:#C9A227;font-size:16px;">Tazmeel Apparels Team</strong></p>
+<p style="font-size:14px;line-height:1.7;margin:25px 0 0;text-align:center;">Best regards,<br><strong style="color:#C9A227;font-size:16px;">Tazmeel Craft Team</strong></p>
 </td>
 </tr>
 <tr>
 <td style="background:#082A1F;padding:25px 20px;text-align:center;">
-<p style="margin:0 0 8px;color:#C9A227;font-size:16px;font-weight:bold;letter-spacing:2px;">TAZMEEL APPARELS</p>
+<p style="margin:0 0 8px;color:#C9A227;font-size:16px;font-weight:bold;letter-spacing:2px;">TAZMEEL CRAFT</p>
 <p style="margin:0;color:#C9A227;font-size:12px;opacity:0.8;">Crafting Style With Tazmeel · Since 2020</p>
 </td>
 </tr>
@@ -176,22 +176,22 @@ export async function sendAutoReply(to, name) {
 
   const text = `Thank You, ${name}!
 
-We received your message at Tazmeel Apparels. Our team will get back to you within 24 hours.
+We received your message at Tazmeel Craft. Our team will get back to you within 24 hours.
 
 For urgent inquiries:
 📱 Phone: 01911548979
-✉️ Email: tazmeelapparels@gmail.com
+✉️ Email: tazmeelcraft@gmail.com
 🕐 Hours: 9AM - 9PM (Sat - Fri)
 
 Chat on WhatsApp: https://wa.me/8801911548979
 
 Best regards,
-Tazmeel Apparels Team`;
+Tazmeel Craft Team`;
 
   return transporter.sendMail({
-    from: `"Tazmeel Apparels" <${process.env.EMAIL_USER}>`,
+    from: `"Tazmeel Craft" <${process.env.EMAIL_USER}>`,
     to,
-    subject: "✨ Thank you for contacting Tazmeel Apparels",
+    subject: "✨ Thank you for contacting Tazmeel Craft",
     text: text,
     html: html,
   });

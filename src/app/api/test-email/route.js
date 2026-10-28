@@ -11,14 +11,14 @@ export async function GET() {
     const info = await transporter.sendMail({
       from: `"Tazmeel Test" <${process.env.EMAIL_USER}>`,
       to: process.env.ADMIN_EMAIL,
-      subject: "🎯 Test Email from Tazmeel Apparels Website",
+      subject: "🎯 Test Email from Tazmeel Craft Website",
       html: `
         <div style="font-family:Arial; max-width:600px; margin:auto; padding:30px; background:#F5F1E8; border-radius:12px;">
           <h1 style="color:#0F3D2E; border-bottom:2px solid #C9A227; padding-bottom:15px;">
             ✅ Email Working!
           </h1>
           <p style="color:#0F3D2E; font-size:16px; line-height:1.6;">
-            এই test email টি Tazmeel Apparels website থেকে পাঠানো হয়েছে।
+            এই test email টি Tazmeel Craft website থেকে পাঠানো হয়েছে।
           </p>
           <p style="color:#0F3D2E; font-size:16px; line-height:1.6;">
             এখন থেকে user/client এর message সরাসরি <strong>${process.env.ADMIN_EMAIL}</strong> এ আসবে।

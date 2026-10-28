@@ -46,7 +46,7 @@ export default function About() {
             WHO WE ARE
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.1] mb-4 sm:mb-5">
-            About Tazmeel Apparels
+            About Tazmeel Craft
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-brand-gold mx-auto" />
         </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-brand-dark/80 mb-5 sm:mb-6">
               Established in{" "}
               <strong className="text-brand-dark font-bold">2020</strong>,
-              Tazmeel Apparels is a Dhaka-based manufacturer of trendy,
+              Tazmeel Craft is a Dhaka-based manufacturer of trendy,
               high-quality Islamic and modest clothing. We blend traditional
               and modern styles, delivering dependable apparel to a diverse
               client base.

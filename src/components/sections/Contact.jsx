@@ -298,7 +298,7 @@ export default function Contact() {
             {/* WhatsApp Button */}
             <a
               href={getWhatsAppLink(
-                "Hello Tazmeel Apparels! I want to discuss a bulk order."
+                "Hello Tazmeel Craft! I want to discuss a bulk order."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -362,7 +362,7 @@ export default function Contact() {
                   <p className="text-brand-dark/70 max-w-md mx-auto mb-6 text-sm sm:text-base">
                     Thank you for contacting{" "}
                     <strong className="text-brand-gold">
-                      Tazmeel Apparels
+                      Tazmeel Craft
                     </strong>
                     . Our team will get back to you within{" "}
                     <strong>24 hours</strong>.
@@ -371,7 +371,7 @@ export default function Contact() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href={getWhatsAppLink(
-                        "Hello Tazmeel Apparels! I just sent an inquiry."
+                        "Hello Tazmeel Craft! I just sent an inquiry."
                       )}
                       target="_blank"
                       rel="noopener noreferrer"

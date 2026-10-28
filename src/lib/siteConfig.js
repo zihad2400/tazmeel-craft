@@ -1,10 +1,10 @@
 // ═══════════════════════════════════════════
-// 🔐 Tazmeel Apparels — Central Business Config
+// 🔐 Tazmeel Craft — Central Business Config
 // ═══════════════════════════════════════════
 
 export const SITE_CONFIG = {
   // ─── Business Info ───
-  businessName: "Tazmeel Apparels",
+  businessName: "Tazmeel Craft",
   businessTagline: "Crafting Style With Tazmeel",
 
   // ─── Phone Numbers ───
@@ -20,7 +20,7 @@ export const SITE_CONFIG = {
   },
 
   // ─── Email ───
-  email: "tazmeelapparels@gmail.com",
+  email: "tazmeelcraft@gmail.com",
 
   // ─── Address ───
   address: "63/3/1 West Agargaon, Sher-e-Bangla Nagar, Dhaka",
@@ -34,9 +34,9 @@ export const SITE_CONFIG = {
 
   // ─── Social ───
   social: {
-    facebook: "https://facebook.com/tazmeelapparels",
-    instagram: "https://instagram.com/tazmeelapparels",
-    linkedin: "https://linkedin.com/company/tazmeelapparels",
+    facebook: "https://facebook.com/tazmeelcraft",
+    instagram: "https://instagram.com/tazmeelcraft",
+    linkedin: "https://linkedin.com/company/tazmeelcraft",
   },
 };
 
@@ -64,6 +64,6 @@ export const getMapLink = () => SITE_CONFIG.googleMapsUrl;
 // ─── Formatted display ───
 export const getPhoneDisplay = () => SITE_CONFIG.phonePrimary.display;
 export const getWhatsAppMessage = (customMessage = "") => {
-  const defaultMsg = `Hello Tazmeel Apparels! I'm interested in your products. Please share more details.`;
+  const defaultMsg = `Hello Tazmeel Craft! I'm interested in your products. Please share more details.`;
   return customMessage || defaultMsg;
 };

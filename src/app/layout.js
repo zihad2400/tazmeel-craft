@@ -14,11 +14,11 @@ const italianno = Italianno({
 });
 
 export const metadata = {
-  title: "Tazmeel Apparels — Islamic & Modest Garments Manufacturer",
+  title: "Tazmeel Craft — Islamic & Modest Garments Manufacturer",
   description:
     "Dhaka-based manufacturer of premium Islamic and modest clothing since 2020. Thobes, Panjabis, Abayas, Hijabs, and custom apparel for brands.",
   keywords: [
-    "Tazmeel Apparels",
+    "Tazmeel Craft",
     "Islamic clothing manufacturer",
     "modest wear Bangladesh",
     "Thobe manufacturer",

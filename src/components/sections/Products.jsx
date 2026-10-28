@@ -298,7 +298,7 @@ export default function Products() {
 
             <a
               href={getWhatsAppLink(
-                "Hello Tazmeel Apparels! I have custom requirements. Let's discuss."
+                "Hello Tazmeel Craft! I have custom requirements. Let's discuss."
               )}
               target="_blank"
               rel="noopener noreferrer"

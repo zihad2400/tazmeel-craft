@@ -109,7 +109,7 @@ export default function Navbar() {
                 TAZMEEL
               </p>
               <p className="text-brand-gold text-[10px] sm:text-xs tracking-[0.25em]">
-                APPARELS
+                CRAFT
               </p>
             </div>
           </Link>

@@ -149,7 +149,7 @@ export default function Hero() {
               ISLAMIC & MODEST GARMENTS MANUFACTURER
             </motion.p>
 
-            {/* TAZMEEL APPARELS */}
+            {/* TAZMEEL CRAFT */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -162,7 +162,7 @@ export default function Hero() {
                 lineHeight: "1.1",
               }}
             >
-              TAZMEEL APPARELS
+              TAZMEEL CRAFT
             </motion.h1>
 
             {/* Location */}
