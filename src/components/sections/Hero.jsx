@@ -156,12 +156,12 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="font-roboto text-brand-cream font-black mb-4 sm:mb-5 lg:mb-6 w-full"
               style={{
-                fontSize: "clamp(1.75rem, 6vw, 4.5rem)",
-                letterSpacing: "0.02em",
-                whiteSpace: "nowrap",
-                lineHeight: "1.05",
+                fontSize: "clamp(1.25rem, 3.8vw, 3.5rem)",
+                letterSpacing: "0.01em",
+                lineHeight: "1.1",
                 fontFamily: "var(--font-roboto), Roboto, sans-serif",
                 fontWeight: 900,
+                wordBreak: "break-word",
               }}
             >
               TAZMEEL CRAFT
